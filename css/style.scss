@@ -1,0 +1,69 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+
+    & div {
+        width: 150px;
+        height: 150px;
+    }
+
+    & #animation_1 {
+        perspective: 1000px;
+
+        & #turn {
+            transform-style: preserve-3d;
+            transform: rotateY(-360deg) translateZ(-412px);
+            animation: swirl 3s steps(10000000000000) infinite;
+
+            & #middle {
+                background-color: aquamarine;
+                transform: rotateY(0deg) translateZ(412px);
+            }
+        }
+    }
+
+
+    & #animation_2 {
+        perspective: 1000px;
+
+        & #turn_2 {
+            transform-style: preserve-3d;
+            transform: rotateY(-360deg) translateZ(-412px);
+            animation: swirl 1s steps(10000000000000) 3;
+
+            & #middle_2 {
+                background-color: aquamarine;
+                transform: rotateY(0deg) translateZ(412px);
+            }
+        }
+    }
+
+
+    & #animation_3 {
+        perspective: 1000px;
+
+        & #turn_3 {
+            transform-style: preserve-3d;
+            transform: rotateY(-360deg) translateZ(-412px);
+            animation: swirl 0.5s steps(10000000000000) 1;
+
+            & #middle_3 {
+                background-color: aquamarine;
+                transform: rotateY(0deg) translateZ(412px);
+            }
+        }
+    }
+
+    @keyframes swirl {   
+        from {
+          transform: rotateY(-360deg);
+        }
+        to {
+          transform: rotateY(0deg);
+        }
+    }
+}
